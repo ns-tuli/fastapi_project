@@ -22,7 +22,12 @@ if not gemini_api_key:
 ai_platform = Gemini(api_key=gemini_api_key, system_prompt=system_prompt)
 
 
+class ChatRequest(BaseModel):
+    prompt: str
 
+
+class ChatResponse(BaseModel):
+    response: str
 
 @app.get("/")
 async def root():
